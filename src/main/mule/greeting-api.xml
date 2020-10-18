@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="a861200c-cd7e-410c-a1e5-f69d2e57dc86" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="greeting-apiFlow" doc:id="40fbda7c-31bb-406b-9518-7e614668c47b" >
+		<http:listener doc:name="Listener" doc:id="52db506e-b604-47af-bfe9-b4413820523f" config-ref="HTTP_Listener_config" path="greeting"/>
+		<set-payload value="I was wondering why it is acting wierd " doc:name="Set Payload" doc:id="c53fe833-8a52-4643-bb95-94ba35845ca8" />
+	</flow>
+</mule>
